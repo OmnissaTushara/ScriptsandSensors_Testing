@@ -1,0 +1,12 @@
+"Built 8 PowerShell scripts under DiskClutterSim/:
+
+Simulate-PreviousWindowsInstallation.ps1 — fake Windows.old tree
+Simulate-UpdateArtifacts.ps1 — fake SoftwareDistribution\Download + WinSxS backup bloat
+Simulate-ErrorDumps.ps1 — fake MEMORY.DMP, minidumps, WER crash dumps
+Simulate-UpgradeLogs.ps1 — fake $WINDOWS.~BT, $WINDOWS.~WS, Panther setup logs
+Invoke-AllSimulations.ps1 — runs all four, prints combined GB summary
+Remove-AllSimulations.ps1 — teardown, reports GB freed
+Common.ps1 — shared helpers
+README.md — usage and safety notes
+
+Default target is %TEMP%\DiskCleanupSim, not any real system path. Writing into a real sensitive path (C:\Windows, Program Files, etc.) requires -Force plus typing YES at a prompt — nothing auto-executes or touches real system files. Run Invoke-AllSimulations.ps1, point your cleanup script at the sandbox folder to test it, then run Remove-AllSimulations.ps1 to clean up."
